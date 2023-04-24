@@ -1,0 +1,34 @@
+javac src/distributor_.java -sourcepath src -d out
+javac src/com/Distributorstart.java -sourcepath src -d out
+cd out && java com.Distributorstart
+
+
+
+
+javac -classpath .;lib/gson-2.8.2.jar src/com/Distributorstart.java -sourcepath src -d out
+cd out && java -classpath .;../lib/gson-2.8.2.jar com.Distributorstart
+
+
+в Linux:
+java -classpath \{путь к каталогу c jar файлами} javaprogram
+
+
+javac -classpath .;lib/gson-2.8.2.jar src/com/Datajson.java -sourcepath src -d out
+
+
+____________
+cd out && java -classpath .;../lib/gson-2.8.2.jar com.Distributorstart 1234 "привет" predict
+
+cd out && java -classpath .;../lib/gson-2.8.2.jar com.Distributorstart 1234 "" train
+____________
+
+cd out && java -classpath .;../lib/* com.Distributorstart 1234 "привет" predict
+
+cd out && java -classpath .;../lib/* com.Distributorstart 1234 " " train
+
+
+
+pip install -r /var/www/FlaskApp/FlaskApp/requirements.txt
+
+
+echo.>User_ids.json
