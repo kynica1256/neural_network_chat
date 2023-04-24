@@ -1,1 +1,4 @@
 /nn_other/__pycache__/
+/server/node_modules/
+/server/package-lock.json
+/server/package.json

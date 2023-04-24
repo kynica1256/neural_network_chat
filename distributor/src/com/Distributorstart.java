@@ -20,7 +20,38 @@ public class Distributorstart {
   static String path_java = String.format("%1$sdistributor%1$sout" ,File.separator);
 
 
+  public static String funccheck(int id_) {
+    String work_path = System.getProperty("user.dir");
+    String path_ = work_path.replace(path_java,"")+path_users_data+"User_ids.json";
+    try {
+      File file_obj = new File(path_);
+      BufferedReader br = new BufferedReader(new FileReader(file_obj));
+      String res_str = "";
+      String line;
+      while ((line = br.readLine()) != null) {
+        if (Integer.parseInt(line) == id_) {
+          return "";
+        }
+        res_str = res_str + line + "\n";
+      }
+      res_str = res_str + Integer.toString(id_) + "\n";
+      File f = new File(work_path.replace(path_java,"")+path_users_data+Integer.toString(id_)+"_data.json");
+      FileWriter writer_ = new FileWriter(f, false);
+      writer_.write("{\n\t\"0\":{}\n}");
+      writer_.flush();
 
+
+
+
+
+      FileWriter writer = new FileWriter(file_obj, false);
+      writer.write(res_str);
+      writer.flush();
+    } catch (IOException ioe) {
+      ioe.printStackTrace();
+    }
+    return "";
+  }
 
   public static void workwithdata(int id, String text_start, String text_finish) {
 
@@ -66,6 +97,7 @@ public class Distributorstart {
     int id_ = Integer.parseInt(args[0]);
     String text = args[1];
     String type_ = args[2];
+    funccheck(id_);
     Distributormethods dm = new Distributormethods();
     //System.out.println(String.format("cd ../../nn_other && python kernel_nn.py %s \"%s\" %s", type_, text, id_));
     String out_sys = dm.func_process(String.format("cd ../../nn_other && python kernel_nn.py %s \"%s\" %s", type_, text, id_));
