@@ -72,7 +72,9 @@ public class Distributorstart {
       while ((line = br.readLine()) != null) {
         all_text += line;
       }
-      all_text = all_text.replace("0", "zero");
+
+
+      all_text = all_text.replaceFirst("0", "zero");
       //Type type = new TypeToken<Map<String, String>>(){}.getType();
       //Map<String, String> myMap = gson.fromJson("{'k1':'apple','k2':'orange'}", type);
       //System.out.println(myMap);
@@ -99,16 +101,16 @@ public class Distributorstart {
     String type_ = args[2];
     funccheck(id_);
     Distributormethods dm = new Distributormethods();
-    //System.out.println(String.format("cd ../../nn_other && python kernel_nn.py %s \"%s\" %s", type_, text, id_));
-    String out_sys = dm.func_process(String.format("cd ../../nn_other && python kernel_nn.py %s \"%s\" %s", type_, text, id_));
+    String out_sys = dm.func_process(String.format("cd ../../nn_other && python3 kernel_nn.py %s \"%s\" %s", type_, text, id_));
     if (type_ == "train") {
       System.exit(0);
     }
-    String data_for_decode = out_sys.substring(out_sys.indexOf("{")+1, out_sys.indexOf("}"));
-    Base64.Decoder decoder = Base64.getDecoder();
-    String decoded = new String(decoder.decode(data_for_decode));
-
-    System.out.println(decoded);
-    workwithdata(id_, text, decoded);
+    String out_sys_1 = dm.func_process(String.format("cd ../../phantomjs_ && OPENSSL_CONF=/etc/ssl phantomjs script.js %s", text));
+    String data_for_decode = out_sys.replaceAll("\n","").substring(out_sys.indexOf("{")+1, out_sys.indexOf("}"));
+    //Base64.Decoder decoder = Base64.getDecoder();
+    // String decoded = new String(decoder.decode(data_for_decode));
+    // System.out.println(decoded);
+    workwithdata(id_, text, out_sys_1);
+    System.out.println(data_for_decode);
   }
 }

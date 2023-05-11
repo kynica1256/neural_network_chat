@@ -14,7 +14,7 @@ public class Distributormethods {
         ProcessBuilder processBuilder = new ProcessBuilder();
 
         // Run this on Windows, cmd, /c = terminate after this run
-        processBuilder.command("cmd.exe", "/c", command);
+        processBuilder.command("bash", "-c", command);
         String data_ = "";
         try {
             Process process = processBuilder.start();

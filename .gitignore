@@ -2,3 +2,8 @@
 /server/node_modules/
 /server/package-lock.json
 /server/package.json
+/phantomjs_/phantomjs-2.1.1-linux-x86_64.tar.bz2
+/server/node_modules
+/server/package.json
+/server/package-lock.json
+/server/command_list.txt

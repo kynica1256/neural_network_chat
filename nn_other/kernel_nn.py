@@ -32,6 +32,13 @@ if  __name__ == "__main__":
     }
     type_operation = sys.argv[1] #predict or train
     text = sys.argv[2] # base 64
+
+
+    enc1 = text.encode("UTF-8")
+    r1 = base64.b64decode(enc1)
+    text = r1.decode("UTF-8")
+
+
     id_user = sys.argv[3] #1234
     id_in_main_meth = 0 if type_operation == "predict" else id_user
     method = main_methods(True, id_in_main_meth)
