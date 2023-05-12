@@ -1,2 +1,2 @@
 <h1>MATRIX AI CHAT<h1>
-<p>This project was created as an individual project at the school.<p>
+<h5>This project was created as an individual project at the school.<h5>
