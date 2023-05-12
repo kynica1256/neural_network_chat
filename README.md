@@ -17,6 +17,6 @@ pip install tensorflow
 pip install keras
 ```
 
-# scheme of work #
+# system architecture #
 ![TEXT](scheme.png)
 
