@@ -17,6 +17,9 @@ pip install tensorflow
 pip install keras
 ```
 
+# neural network architecture #
+![TEXT](scheme_neuron.png)
+
 # system architecture #
 ![TEXT](scheme.png)
 
