@@ -7,7 +7,7 @@ Tensorflow, keras was used as the main machine learning python library. In addit
 This neural network is presented as a Telegram chat bot @Al_NEED_BOT.
 
 ### Description of work ###
-
+<hr>
 Python project modules:
 
 ```
