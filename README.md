@@ -16,3 +16,5 @@ pip install -U scikit-learn
 pip install tensorflow
 pip install keras
 ```
+![TEXT](scheme.png)
+
