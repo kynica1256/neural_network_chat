@@ -17,6 +17,13 @@ pip install tensorflow
 pip install keras
 ```
 
+Install phantomjs
+```
+sudo apt-get install gsfonts-x11 fonts-arphic-uming
+cd /tmp/ && wget https://bitbucket.org`curl -s https://bitbucket.org/ariya/phantomjs/downloads/ | grep -E -o '/ariya/phantomjs/downloads/phantomjs-[0-9.-]{3,}-linux-x86_64.tar.bz2' | head -n 1` && tar xjf phantomjs-* && sudo mv `ls | grep 'phantomjs-' | head -n 1`/bin/phantomjs /usr/bin/ && cd `ls | grep 'phantomjs-' | head -n 1` && sudo mkdir /usr/share/phantomjs && sudo mv examples/ /usr/share/phantomjs && cd
+sudo ln -s /usr/bin/phantomjs /usr/local/bin/phantomjs
+sudo ln -s /usr/bin/phantomjs /usr/local/share/phantomjs
+```
 # neural network architecture #
 ![TEXT](scheme_neuron.png)
 
